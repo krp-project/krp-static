@@ -1,5 +1,6 @@
-# Protokolle des Ministerrates der Ersten Republik der Republik Österreich
+# krp-static
 
+Static Website of the [Minutes of the Austrian Cabinet Council 1919–1920](https://doi.org/10.55776/PAT1495024) project
 
 * data is fetched from https://github.com/krp-project/krp-data
 * build with [DSE-Static-Cookiecutter](https://github.com/acdh-oeaw/dse-static-cookiecutter)
@@ -9,26 +10,6 @@
 
 * run `./fetch_data.sh`
 * run `ant`
-
-> [!NOTE]
-> The `build.xml` triggered by the `ant` command presumes the following folder-file structure in the data repo:
-> 
-> ```
-> data/
-> ├── editions/
-> │   ├── *.xml
-> │   ├── *.xml
-> │   └── *.xml
-> ├── indices/
-> │   ├── listbibl.xml
-> │   ├── listorg.xml
-> │   ├── listperson.xml
-> │   └── listplace.xml
-> └── meta/
->     └── about.xml
-> ```
-> 
-> Otherwise, modify the relevant lines of the `build.xml`.
 
 ## set up GitHub repo
 * create a public, new, and empty (without README, .gitignore, license) GitHub repo https://github.com/krp-project/krp-static 
@@ -43,7 +24,7 @@
 
 ## publish as GitHub Page
 
-* go to https://https://github.com/krp-project/krp-static/actions/workflows/build.yml
+* go to https://github.com/krp-project/krp-static/actions/workflows/build.yml
 * click the `Run workflow` button
 
 
