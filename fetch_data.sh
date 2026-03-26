@@ -12,3 +12,5 @@ rm -rf ./krp-data-main
 
 echo "fetch imprint"
 ./shellscripts/dl_imprint.sh
+
+uv run add-attributes -g "./data/editions/*.xml" -b "https://id.acdh.oeaw.ac.at/krp"
