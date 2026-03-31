@@ -3,7 +3,7 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
     <xsl:param name="directory_name">krp-static</xsl:param>
-    <xsl:param name="project_title">Protokolle des Ministerrates der Ersten Republik der Republik Österreich</xsl:param>
+    <xsl:param name="project_title">Die Protokolle des österreichischen Kabinettsrates 1919-1920</xsl:param>
     <xsl:param name="redmine_id">28081</xsl:param>
     <xsl:param name="project_short_title">KRP</xsl:param>
     <xsl:param name="default_lang">de</xsl:param>
