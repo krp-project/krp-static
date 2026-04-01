@@ -7,9 +7,15 @@
     version="2.0">
     
     <xsl:import href="entities.xsl"/>
-
+    
     <xsl:template match="tei:div">
-        <div><xsl:apply-templates/></div>
+        <div>
+            <!-- preserve @xml:id value if present -->
+            <xsl:if test="@xml:id">
+                <xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </div>
     </xsl:template>
     <xsl:template match="tei:pb">
         <span class="anchor-pb"></span>
