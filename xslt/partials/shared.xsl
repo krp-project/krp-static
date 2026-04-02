@@ -10,7 +10,7 @@
     
     <xsl:template match="tei:div">
         <div>
-            <!-- preserve @xml:id value if present -->
+            <!-- CHANGE: preserve @xml:id value if present as @id, for page-section linking -->
             <xsl:if test="@xml:id">
                 <xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute>
             </xsl:if>

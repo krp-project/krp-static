@@ -2,7 +2,7 @@
 name: Deploy static content to Pages
 
 on:
-  # trigger workflow on push against main
+  # CHANGE: trigger workflow also on push against main
   push:
     branches:
       - main

@@ -27,7 +27,7 @@
         <xsl:value-of select="replace($teiSource, '.xml', '.html')"/>
     </xsl:variable>
     <xsl:variable name="doc_title">
-        <!-- select document main title -->
+        <!-- CHANGE: replace series title with document title, because this is the correct title of the edition unit -->
         <xsl:value-of select=".//tei:titleStmt/tei:title[2]/text()"/>
     </xsl:variable>
 
