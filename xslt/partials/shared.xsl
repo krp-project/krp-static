@@ -76,9 +76,10 @@
         </xsl:choose>
     </xsl:template> -->
     
-    <!-- CHANGE: handle un-typed lists, flat or nested; drop obsolete class attribute -->
+    <!-- CHANGE: handle un-typed lists, both flat and nested;
+         replace obsolete class value with Bootstrap values -->
     <xsl:template match="tei:list[ancestor::tei:body]">
-        <ul>
+        <ul class="list-unstyled ms-3">
             <xsl:apply-templates/>
         </ul>
     </xsl:template>
