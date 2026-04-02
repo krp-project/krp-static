@@ -59,7 +59,7 @@
         </xsl:element>
     </xsl:template>
 
-    <xsl:template match="tei:list[@type='unordered']">
+    <!-- <xsl:template match="tei:list[@type='unordered']">
         <xsl:choose>
             <xsl:when test="ancestor::tei:body">
                 <ul class="yes-index">
@@ -74,8 +74,18 @@
                 <li><xsl:apply-templates/></li>
             </xsl:when>
         </xsl:choose>
+    </xsl:template> -->
+    
+    <!-- CHANGE: handle un-typed lists, flat or nested; drop obsolete class attribute -->
+    <xsl:template match="tei:list[ancestor::tei:body]">
+        <ul>
+            <xsl:apply-templates/>
+        </ul>
     </xsl:template>
-
+    <xsl:template match="tei:item[parent::tei:list[ancestor::tei:body]]">
+        <li><xsl:apply-templates/></li>
+    </xsl:template>
+    
     <xsl:template match="tei:hi">
         <span>
             <xsl:choose>
