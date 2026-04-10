@@ -31,30 +31,28 @@
                                 <a class="nav-link" href="toc.html">Editionseinheiten</a>
                             </li>
 
-                            <li class="nav-item dropdown disabled">
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Register</a>
                                 <ul class="dropdown-menu">
+                                    <!-- CHANGE: disable links and prevent selection, remove href, tell screen reader -->
                                     <li>
-                                        <a class="dropdown-item" href="listperson.html">Personen</a>
+                                        <a class="dropdown-item disabled user-select-none" aria-disabled="true">Personen</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="listplace.html">Orte</a>
+                                        <a class="dropdown-item disabled user-select-none" aria-disabled="true">Orte</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="listorg.html">Organisationen</a>
+                                        <a class="dropdown-item disabled user-select-none" aria-disabled="true">Organisationen</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="listbibl.html">Werke</a>
+                                        <a class="dropdown-item disabled user-select-none" aria-disabled="true">Werke</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
                                 <a title="API" class="nav-link" href="api.xml">API</a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a title="Suche" class="nav-link" href="search.html">Suche</a>
-                            </li> -->
-                            <!-- CHANGE: disable search link -->
+                            <!-- CHANGE: disable link and prevent selection, remove href, tell screen reader -->
                             <li class="nav-item">
                                 <a title="Suche" class="nav-link disabled user-select-none" aria-disabled="true">Suche</a>
                             </li>
