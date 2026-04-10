@@ -51,8 +51,12 @@
                             <li class="nav-item">
                                 <a title="API" class="nav-link" href="api.xml">API</a>
                             </li>
+                            <!-- <li class="nav-item">
+                                <a title="Suche" class="nav-link" href="search.html">Suche</a>
+                            </li> -->
+                            <!-- CHANGE: disable search link -->
                             <li class="nav-item">
-                                <a title="Suche" class="nav-link disabled" href="search.html">Suche</a>
+                                <a title="Suche" class="nav-link disabled" aria-disabled="true">Suche</a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a title="Suche" class="nav-link" href="noske-search.html">Noske-Suche</a>
