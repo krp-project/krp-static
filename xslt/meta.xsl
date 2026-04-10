@@ -17,7 +17,8 @@
     <xsl:template match="/">
         <xsl:variable name="doc_title">
             <!-- CHANGE: replace series title with project title -->
-            <xsl:value-of select=".//tei:title[@type='project'][1]/text()"/>
+            <!-- <xsl:value-of select=".//tei:title[@type='main'][1]/text()"/> -->
+            <xsl:value-of select="$project_title"/>
         </xsl:variable>
         <xsl:variable name="teiSource">
             <xsl:value-of select="data(tei:TEI/@xml:id)"/>
