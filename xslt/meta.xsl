@@ -16,7 +16,8 @@
 
     <xsl:template match="/">
         <xsl:variable name="doc_title">
-            <xsl:value-of select=".//tei:title[@type='main'][1]/text()"/>
+            <!-- CHANGE: replace series title with project title -->
+            <xsl:value-of select=".//tei:title[@type='project'][1]/text()"/>
         </xsl:variable>
         <xsl:variable name="teiSource">
             <xsl:value-of select="data(tei:TEI/@xml:id)"/>
@@ -72,7 +73,19 @@
         <p id="{generate-id()}"><xsl:apply-templates/></p>
     </xsl:template>
     <xsl:template match="tei:div">
-        <div id="{generate-id()}"><xsl:apply-templates/></div>
+        <div id="{generate-id()}">
+            <!-- CHANGE: preserve @xml:lang value if present -->
+            <xsl:if test="@xml:lang">
+                <xsl:attribute name="lang">
+                    <xsl:value-of select="@xml:lang"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <!-- CHANGE: transform TEI first-level div head into HTML h2 -->
+    <xsl:template match="tei:body/tei:div/tei:head">
+        <h2><xsl:apply-templates/></h2>
     </xsl:template>
     <xsl:template match="tei:lb">
         <br/>
