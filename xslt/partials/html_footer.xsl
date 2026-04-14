@@ -68,11 +68,22 @@
                 </div>
                 <div class="d-flex align-items-center gap-2 border-bottom pb-3 mb-4" style="color: #444;">
                     <i class="bi bi-wallet" style="font-size: 1.125rem;" aria-hidden="true"></i>
-                    <span class="fw-medium" style="font-size: 0.875rem;">Förderinstitutionen</span>
+                    <span class="fw-medium" style="font-size: 0.875rem;">Netzwerke und Förderinstitutionen</span>
                 </div>
                 
                 <div class="row justify-content-md-center">
                     
+                    <div class="col col-lg-3">
+                        <div>
+                            <a href="https://www.protokolleditionen.eu/">
+                                <img src="./images/Logo_Protokolleditionen_1a.svg" alt="Arbeitskreis Digitale Protokolleditionen" class="footerlogo"/>
+                            </a>
+                        </div>
+                        <div class="text-center p-3">
+                            Arbeitskreis Digitale Protokolleditionen<br />
+                            <a href="https://www.protokolleditionen.eu">protokolleditionen.eu</a>
+                        </div>
+                    </div>
                     <div class="col col-lg-3">
                         <div>
                             <a href="https://doi.org/10.55776/PAT1495024">
