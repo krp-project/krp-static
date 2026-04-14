@@ -1,3 +1,17 @@
+/* Define custom properties */
+:root {
+    --dse-base-color: #88DBDF;/* ACDH-AQUA in ACDH CD color scheme */
+}
+
+/* Style footer */
+footer {
+    border-top: solid;
+    border-color: var(--dse-base-color);
+}
+.footerlogo {
+    height: 60px;
+}
+
 /* needed for interactive map in listplace.xsl */
 div#map {
     height: 50vh;
