@@ -3,6 +3,11 @@
     --dse-base-color: #88DBDF;/* ACDH-AQUA in ACDH CD color scheme */
 }
 
+/* Class for color styling */
+.base-color {
+    color: var(--dse-base-color);
+}
+
 /* Style footer */
 footer {
     border-top: solid;
