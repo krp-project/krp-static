@@ -31,8 +31,9 @@
             <body class="d-flex flex-column h-100">
                 
                 <xsl:call-template name="nav_bar"/>
-
-                <main class="flex-shrink-0 flex-grow-1">
+                
+                <!-- CHANGE: add skip-link target for keyboard-only use -->
+                <main id="main" class="flex-shrink-0 flex-grow-1">
                     
                     <!-- CHANGE: adopt from tillich-briefe-static -->
                     <div class="container col-xxl-8 pt-3">
