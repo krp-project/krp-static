@@ -1,6 +1,6 @@
 /* Define custom properties */
 :root {
-    --dse-base-color: #017596;
+    --dse-base-color: #0d6efd;/* Bootstrap primary color */
 }
 
 /* Class for color styling */
