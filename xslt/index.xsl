@@ -16,28 +16,55 @@
 
     <xsl:template match="/">
         <xsl:variable name="doc_title">
-            <xsl:value-of select='"KRP"'/>
+            <xsl:value-of select='"Kabinettsratsprotokolle"'/>
         </xsl:variable>
-        <xsl:call-template name="zoterMetaTags"></xsl:call-template>
         <html class="h-100" lang="{$default_lang}">
+            
             <head>
                 <xsl:call-template name="html_head">
                     <xsl:with-param name="html_title" select="$doc_title"></xsl:with-param>
                 </xsl:call-template>
-            </head>            
+                <!-- CHANGE: move Zotero template into head -->
+                <xsl:call-template name="zoterMetaTags"></xsl:call-template>
+            </head>        
+            
             <body class="d-flex flex-column h-100">
+                
                 <xsl:call-template name="nav_bar"/>
+
                 <main class="flex-shrink-0 flex-grow-1">
-                    <div class="container">
-                        <xsl:call-template name="one_time_alert"/>
-                        <h1><xsl:value-of select="$project_short_title"/></h1>
-                        <h2><xsl:value-of select="$project_title"/></h2>
-                        <div class="text-center p-4">
-                            <xsl:call-template name="blockquote"/>
+                    
+                    <!-- CHANGE: adopt from tillich-briefe-static -->
+                    <div class="container col-xxl-8 pt-3">
+                        
+                        <div class="row flex-lg-row align-items-center g-5 py-5">
+                            
+                            <div class="col-lg-6">
+                                <xsl:call-template name="one_time_alert"/>
+                                <!-- <h1><xsl:value-of select="$project_short_title"/></h1>
+                                <h2><xsl:value-of select="$project_title"/></h2> -->
+                                <h1><xsl:value-of select="$project_title"/></h1>
+                                <div class="text-center p-4">
+                                    <xsl:call-template name="blockquote"/>
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-10 col-sm-8 col-lg-6"> -->
+                            <div class="col-lg-6">
+                                <figure class="figure">
+                                    <img src="images/title-img.jpg" class="d-block mx-lg-auto img-fluid" alt="Fotografie der ersten Seiten von Kabinettsratsprotokolls Nummer 161 vom 16. März 1920 und dazugehörigem Stenogramm" height="800" loading="lazy"/>
+                                    <figcaption class="pt-3 figure-caption text-center">Kabinettsratsprotokoll 161 mit Stenogramm vom 16. März 1920. Foto: CC BY 4.0.</figcaption>
+                                </figure>
+                            </div>
+
                         </div>
+
                     </div>
+
                 </main>
+
                 <xsl:call-template name="html_footer"/>
+
             </body>
         </html>
     </xsl:template>
