@@ -53,7 +53,7 @@
                             <!-- <div class="col-10 col-sm-8 col-lg-6"> -->
                             <div class="col-lg-6">
                                 <figure class="figure">
-                                    <img src="images/title-img.jpg" class="d-block mx-lg-auto img-fluid" alt="Fotografie der ersten Seiten von Kabinettsratsprotokolls Nummer 161 vom 16. März 1920 und dazugehörigem Stenogramm" height="800" loading="lazy"/>
+                                    <img src="images/title-img.jpg" class="d-block mx-lg-auto img-fluid" alt="Fotografie der ersten Seiten von Kabinettsratsprotokolls Nummer 161 vom 16. März 1920 und dazugehörigem Stenogramm" width="893" height="670" loading="lazy"/>
                                     <figcaption class="pt-3 figure-caption text-center">Kabinettsratsprotokoll 161 mit Stenogramm vom 16. März 1920. Foto: CC BY 4.0.</figcaption>
                                 </figure>
                             </div>
