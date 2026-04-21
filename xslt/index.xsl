@@ -10,7 +10,7 @@
     <xsl:import href="./partials/html_navbar.xsl"/>
     <xsl:import href="./partials/html_footer.xsl"/>
     <xsl:import href="./partials/one_time_alert.xsl"/>
-    <xsl:import href="./partials/blockquote.xsl"/>
+    <!-- <xsl:import href="./partials/blockquote.xsl"/> -->
     <xsl:import href="./partials/zotero.xsl"/>
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="yes" omit-xml-declaration="yes"/>
 
@@ -45,8 +45,15 @@
                                 <!-- <h1><xsl:value-of select="$project_short_title"/></h1>
                                 <h2><xsl:value-of select="$project_title"/></h2> -->
                                 <h1><xsl:value-of select="$project_title"/></h1>
-                                <div class="text-center p-4">
+                                <!-- <div class="text-center p-4">
                                     <xsl:call-template name="blockquote"/>
+                                </div> -->
+                                <p>
+                                    Herausgegeben von Thomas Olechowski und Helmut Wohnout, 2026-2028
+                                </p>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                    <!-- <a href="search.html" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Volltextsuche</a> -->
+                                    <a href="toc.html" role="button" class="btn btn-primary btn-lg px-4">Zu den Protokollen</a>
                                 </div>
                             </div>
 
