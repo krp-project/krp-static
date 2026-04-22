@@ -32,8 +32,8 @@
                 
                 <xsl:call-template name="nav_bar"/>
                 
-                <!-- CHANGE: add skip-link target for keyboard-only use -->
-                <main id="main" class="flex-shrink-0 flex-grow-1">
+                <!-- CHANGE: add skip-link target id and tabindex for keyboard-only use -->
+                <main id="main" tabindex="-1" class="flex-shrink-0 flex-grow-1">
                     
                     <!-- CHANGE: adopt from tillich-briefe-static -->
                     <div class="container col-xxl-8 pt-3">
