@@ -1,6 +1,7 @@
 /* Define custom properties */
 :root {
-    --dse-base-color: #0d6efd;/* Bootstrap primary color */
+    --dse-base-color: #0047BB;/* ÖAW-BLUE */
+    --dse-base-color-light: #f1f1f1;/* ACDH LIGHT GREY */
 }
 
 /* Class for color styling */
@@ -31,4 +32,13 @@ div#map {
 .entity {
     text-decoration: underline dotted;
     cursor: pointer;
+}
+
+/* Style links */
+a, a:visited { color: var(--dse-base-color); }
+a:hover, a:focus { color: var(--dse-base-color); }
+
+/* Reduce Tabulator background color for accessibility */
+.tabulator-tableholder .tabulator-table .tabulator-row-even {
+  background-color: var(--dse-base-color-light);
 }
