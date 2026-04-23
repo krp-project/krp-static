@@ -2,6 +2,10 @@
 :root {
     --dse-base-color: #0047BB;/* ÖAW-BLUE */
     --dse-base-color-light: #f1f1f1;/* ACDH LIGHT GREY */
+    --dse-base-color-dark: #003a96;
+    /* Style Bootstrap links */
+    --bs-link-color-rgb: 0, 71, 187;
+    --bs-link-hover-color-rgb: 0, 71, 187;
 }
 
 /* Class for color styling */
@@ -34,11 +38,17 @@ div#map {
     cursor: pointer;
 }
 
-/* Style links */
-a, a:visited { color: var(--dse-base-color); }
-a:hover, a:focus { color: var(--dse-base-color); }
-
 /* Reduce Tabulator background color for accessibility */
 .tabulator-tableholder .tabulator-table .tabulator-row-even {
   background-color: var(--dse-base-color-light);
+}
+
+/* Style Bootstrap buttons */
+.btn-primary {
+    --bs-btn-bg: var(--dse-base-color);
+    --bs-btn-border-color: var(--dse-base-color);
+    --bs-btn-hover-bg: var(--dse-base-color-dark);
+    --bs-btn-hover-border-color: var(--dse-base-color-dark);
+    --bs-btn-active-bg: var(--dse-base-color-dark);
+    --bs-btn-active-border-color: var(--dse-base-color-dark);
 }
