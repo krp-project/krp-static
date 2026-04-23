@@ -50,7 +50,7 @@
                         <table id="myTable">
                             <thead>
                                 <tr>
-                                    <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
+                                    <!-- <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th> -->
                                     <!-- <th scope="col" tabulator-headerFilter="input">Titel</th>
                                     <th scope="col" tabulator-headerFilter="input">Dateinname</th> -->
                                     <!-- CHANGE: adopt from tillich-briefe-static -->
@@ -67,18 +67,17 @@
                                         <xsl:value-of select="document-uri(/)"/>
                                     </xsl:variable>
                                     <tr>
-                                        <td>
+                                        <!-- <td>
                                             <a>
                                                 <xsl:attribute name="href">
                                                   <xsl:value-of
                                                   select="replace(tokenize($full_path, '/')[last()], '.xml', '.html')"
                                                   />
                                                 </xsl:attribute>
-                                                <!-- CHANGE: add screen-reader functionality -->
                                                 <i aria-hidden="true" class="bi bi-link-45deg fs-5 base-color"/>
                                                 <span class="visually-hidden">Zum Protokoll</span>
                                             </a>
-                                        </td>
+                                        </td> -->
                                         <td>
                                             <!-- CHANGE: add link to title -->
                                             <a>
