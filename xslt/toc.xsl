@@ -51,8 +51,13 @@
                             <thead>
                                 <tr>
                                     <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
-                                    <th scope="col" tabulator-headerFilter="input">Titel</th>
-                                    <th scope="col" tabulator-headerFilter="input">Dateinname</th>
+                                    <!-- <th scope="col" tabulator-headerFilter="input">Titel</th>
+                                    <th scope="col" tabulator-headerFilter="input">Dateinname</th> -->
+                                    <!-- CHANGE: adopt from tillich-briefe-static -->
+                                    <th scope="col" tabulator-headerFilter="input" tabulator-formatter="html" tabulator-download="false">Titel</th>
+                                    <th scope="col" tabulator-visible="false" tabulator-download="true">titel_</th><!-- CHANGE: remove tabulator-headerFilter -->
+                                    <th scope="col" tabulator-headerFilter="input" tabulator-download="true">Dateinname</th><!-- CHANGE: add explicit tabulator-download -->
+                                    <th scope="col" tabulator-field="id" tabulator-visible="false" tabulator-download="false">ID</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,17 +74,33 @@
                                                   select="replace(tokenize($full_path, '/')[last()], '.xml', '.html')"
                                                   />
                                                 </xsl:attribute>
-                                                <i class="bi bi-link-45deg"/>
+                                                <!-- CHANGE: add screen-reader functionality -->
+                                                <i aria-hidden="true" class="bi bi-link-45deg fs-5 base-color"/>
+                                                <span class="visually-hidden">Zum Protokoll</span>
                                             </a>
                                         </td>
                                         <td>
-                                            <!-- CHANGE: replace series title with document title, because this is the correct title of the edition unit -->
-                                            <xsl:value-of
-                                                select=".//tei:titleStmt/tei:title[2]/text()"/>
+                                            <!-- CHANGE: add link to title -->
+                                            <a>
+                                                <xsl:attribute name="href">
+                                                    <xsl:value-of select="replace(tokenize($full_path, '/')[last()], '.xml', '.html')"/>
+                                                </xsl:attribute>
+                                                <!-- CHANGE: replace series title with document title, because this is the correct title of the edition unit -->
+                                                <xsl:value-of
+                                                    select=".//tei:titleStmt/tei:title[2]/text()"/>
+                                            </a>
+                                        </td>
+                                        <!-- CHANGE: add hidden titel_ data -->
+                                        <td>
+                                            <xsl:value-of select=".//tei:titleStmt/tei:title[2]/text()"/>
                                         </td>
                                         <td>
                                             <xsl:value-of select="tokenize($full_path, '/')[last()]"
                                             />
+                                        </td>
+                                        <!-- CHANGE: add hidden ID data -->
+                                        <td>
+                                            <xsl:value-of select="replace(tokenize($full_path, '/')[last()], '.xml', '')"/>
                                         </td>
                                     </tr>
                                 </xsl:for-each>
@@ -94,7 +115,12 @@
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
-                <xsl:call-template name="tabulator_js"/>
+                <!-- <xsl:call-template name="tabulator_js"/> -->
+                <!-- CHANGE: include rowClick -->
+                <xsl:call-template name="tabulator_js">
+                    <xsl:with-param name="clickme" select="true()"/>
+                </xsl:call-template>
+
             </body>
         </html>
     </xsl:template>
