@@ -33,7 +33,7 @@ Static Website of the [Minutes of the Austrian Cabinet Council 1919–1920](http
 * To build the image run: `docker build -f docker/Dockerfile -t krp-static .`
 * To run the container: `docker run -p 80:80 --rm --name krp-static krp-static`
 
-## Licenses
+## licenses
 
 This project is released under the [MIT License](LICENSE)
 
@@ -43,3 +43,6 @@ The code for all third-party JavaScript libraries used is included in the `html/
 ### SAXON-HE
 The projects also includes Saxon-HE, which is licensed separately under the Mozilla Public License, Version 2.0 (MPL 2.0). See the dedicated [LICENSE.txt](saxon/notices/LICENSE.txt)
 
+## accessibility
+
+axe detects three ARIA-hierarchy/label issues related to the Tabulator-enhanced table on toc.html. These arise from the library's runtime DOM and are not patched locally to avoid interference with Tabulator's own keyboard/screen-reader handling.
