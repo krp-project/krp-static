@@ -52,3 +52,8 @@ div#map {
     --bs-btn-active-bg: var(--dse-base-color-dark);
     --bs-btn-active-border-color: var(--dse-base-color-dark);
 }
+
+/* Add buffer above main frame for skip-link focus*/
+#main {
+    scroll-margin-top: 1rem;
+}
