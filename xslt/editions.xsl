@@ -129,11 +129,11 @@
                             </xsl:for-each>
                         </p>
 
-                        <div class="text-center p-4">
+                        <!-- <div class="text-center p-4">
                             <xsl:call-template name="blockquote">
                                 <xsl:with-param name="pageId" select="$link"/>
                             </xsl:call-template>
-                        </div>
+                        </div> -->
 
                     </div>
                     <xsl:for-each select="//tei:back">
