@@ -54,9 +54,9 @@
                                     <!-- <th scope="col" tabulator-headerFilter="input">Titel</th>
                                     <th scope="col" tabulator-headerFilter="input">Dateinname</th> -->
                                     <!-- CHANGE: adopt from tillich-briefe-static -->
-                                    <th scope="col" tabulator-headerFilter="input" tabulator-formatter="html" tabulator-download="false">Titel</th>
+                                    <th scope="col" tabulator-headerFilter="input" tabulator-formatter="html" tabulator-download="false" tabulator-minWidth="280">Titel</th>
                                     <th scope="col" tabulator-visible="false" tabulator-download="true">titel_</th><!-- CHANGE: remove tabulator-headerFilter -->
-                                    <th scope="col" tabulator-headerFilter="input" tabulator-download="true">Dateinname</th><!-- CHANGE: add explicit tabulator-download -->
+                                    <th scope="col" tabulator-headerFilter="input" tabulator-download="true" tabulator-minWidth="180">Dateinname</th><!-- CHANGE: add explicit tabulator-download -->
                                     <th scope="col" tabulator-field="id" tabulator-visible="false" tabulator-download="false">ID</th>
                                 </tr>
                             </thead>
