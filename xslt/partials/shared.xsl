@@ -131,7 +131,7 @@
     <xsl:template match="tei:table">
         <xsl:element name="table">
             <xsl:attribute name="class">
-                <xsl:text>table table-bordered table-striped table-condensed table-hover</xsl:text>
+                <xsl:text>table table-bordered table-sm</xsl:text><!-- CHANGE: replace Bootstrap 3 table-condensed with Bootstrap 5 table-sm; remove table-striped table-hover for more truthful source representation -->
             </xsl:attribute>
             <xsl:element name="tbody">
                 <xsl:apply-templates/>
