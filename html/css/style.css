@@ -57,3 +57,11 @@ div#map {
 #main {
     scroll-margin-top: 1rem;
 }
+
+/* Implement MRP rendition specifications */
+.italic {
+    font-style:italic;
+}
+.letterspaced {
+    letter-spacing:0.15em;
+}
