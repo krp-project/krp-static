@@ -107,20 +107,24 @@
                         </div>
                         <xsl:apply-templates select=".//tei:body"></xsl:apply-templates>
                         <p style="text-align:center;">
-                            <xsl:for-each select=".//tei:note[not(./tei:p)]">
+                            <!-- <xsl:for-each select=".//tei:note[not(./tei:p)]"> -->
+                            <xsl:for-each select=".//tei:note[@type='footnote']"><!-- CHANGE: limit footnote handling to notes intended as such -->
                                 <div class="footnotes">
                                     <xsl:element name="a">
                                         <xsl:attribute name="name">
                                             <xsl:text>fn</xsl:text>
-                                            <xsl:number level="any" format="1" count="tei:note"/>
+                                            <!-- <xsl:number level="any" format="1" count="tei:note"/> -->
+                                            <xsl:value-of select="@n"/><!-- CHANGE: use tei:note/@n for numbering footnotes -->
                                         </xsl:attribute>
                                         <a>
                                             <xsl:attribute name="href">
                                                 <xsl:text>#fna_</xsl:text>
-                                                <xsl:number level="any" format="1" count="tei:note"/>
+                                                <!-- <xsl:number level="any" format="1" count="tei:note"/> -->
+                                                <xsl:value-of select="@n"/>
                                             </xsl:attribute>
                                             <span style="font-size:7pt;vertical-align:super; margin-right: 0.4em">
-                                                <xsl:number level="any" format="1" count="tei:note"/>
+                                                <!-- <xsl:number level="any" format="1" count="tei:note"/> -->
+                                                <xsl:value-of select="@n"/>
                                             </span>
                                         </a>
                                     </xsl:element>
