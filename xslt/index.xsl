@@ -45,14 +45,14 @@
                                 <!-- <h1><xsl:value-of select="$project_short_title"/></h1>
                                 <h2><xsl:value-of select="$project_title"/></h2> -->
                                 <p>
-                                    Thomas Olechowski, Helmut Wohnout (Hg.)
+                                    Thomas Olechowski, Helmut Wohnout, Alexandra N. Lenz (Hgg.)
                                 </p>
                                 <h1><xsl:value-of select="$project_title"/></h1>
                                 <!-- <div class="text-center p-4">
                                     <xsl:call-template name="blockquote"/>
                                 </div> -->
                                 <p>
-                                    Digitale Edition<br />Österreichische Akademie der Wissenschaften<br />Wien 2026–2028
+                                    <h2>Digitale Edition</h2><br />Österreichische Akademie der Wissenschaften<br />Wien 2026–2028
                                 </p>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                                     <!-- <a href="search.html" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Volltextsuche</a> -->
