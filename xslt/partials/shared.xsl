@@ -98,7 +98,8 @@
                         <xsl:text>italic</xsl:text>
                     </xsl:attribute>
                 </xsl:when>
-                <xsl:when test="@rendition = '#italic'">
+                <!-- <xsl:when test="@rendition = '#italic'"> -->
+                <xsl:when test="@rendition = '#italic' or @rend = '#i'"><!-- CHANGE: align with MRP rendition specifications -->
                     <xsl:attribute name="class">
                         <xsl:text>italic</xsl:text>
                     </xsl:attribute>
@@ -111,6 +112,12 @@
                 <xsl:when test="@rendition = '#bold'">
                     <xsl:attribute name="class">
                         <xsl:text>bold</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <!-- CHANGE: align with MRP rendition specifications -->
+                <xsl:when test="@rend = '#letterspaced'">
+                    <xsl:attribute name="class">
+                        <xsl:text>letterspaced</xsl:text>
                     </xsl:attribute>
                 </xsl:when>
             </xsl:choose>
