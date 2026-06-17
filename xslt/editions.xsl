@@ -151,4 +151,12 @@
             </body>
         </html>
     </xsl:template>
+    
+    <!-- CHANGE: handle transcription-DOCX title -->
+    <xsl:template match="tei:body//tei:head/tei:title[1]">
+        <h2>
+            <xsl:apply-templates/>
+        </h2>
+    </xsl:template>
+
 </xsl:stylesheet>
