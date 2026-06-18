@@ -19,6 +19,11 @@
     </xsl:template>
     <xsl:template match="tei:pb">
         <span class="anchor-pb"></span>
+        <!-- CHANGE: include MRP-style pagebreak marker (probably only temporary solution) -->
+        <span style="position: relative; top: -0.5em; font-size: 80%; color:#666;" title="Seitenwechsel in der Originalquelle">
+            <span aria-hidden="true">|| ||</span>
+            <span class="visually-hidden">Seitenwechsel in der Originalquelle</span>
+        </span>
         <span class="pb" source="{@facs}"><xsl:value-of select="./@n"/></span>
     </xsl:template>
     <xsl:template match="tei:unclear">
