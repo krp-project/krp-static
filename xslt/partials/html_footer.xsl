@@ -26,19 +26,6 @@
                 </div>
                 
                 <div class="row justify-content-md-center">
-                    
-                    <div class="col col-lg-4">
-                        <div>
-                            <a href="https://www.oeaw.ac.at/acdh/acdh-home">
-                                <img class="footerlogo" src="./images/acdh_logo_with_text_color.svg" alt="Austrian Centre for Digital Humanities"/>
-                            </a>
-                        </div>
-                        <div class="text-center p-4">
-                            ACDH Austrian Centre for Digital Humanities<br />
-                            Österreichische Akademie der Wissenschaften<br />
-                            <a href="mailto:acdh-helpdesk@oeaw.ac.at">acdh-helpdesk@oeaw.ac.at</a>
-                        </div>
-                    </div>
 
                     <div class="col col-lg-4">
                         <div>
@@ -62,6 +49,19 @@
                         <div class="text-center p-4">
                             Österreichisches Staatsarchiv<br />
                             <a href="mailto:oesta@oesta.gv.at">oesta@oesta.gv.at</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col col-lg-4">
+                        <div>
+                            <a href="https://www.oeaw.ac.at/acdh/acdh-home">
+                                <img class="footerlogo" src="./images/acdh_logo_with_text_color.svg" alt="Austrian Centre for Digital Humanities"/>
+                            </a>
+                        </div>
+                        <div class="text-center p-4">
+                            ACDH Austrian Centre for Digital Humanities<br />
+                            Österreichische Akademie der Wissenschaften<br />
+                            <a href="mailto:acdh-helpdesk@oeaw.ac.at">acdh-helpdesk@oeaw.ac.at</a>
                         </div>
                     </div>
 
