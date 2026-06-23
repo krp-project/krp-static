@@ -3,8 +3,9 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:krp="https://www.oeaw.ac.at/krp/ns"
     version="2.0"
-    exclude-result-prefixes="xsl tei xs">
+    exclude-result-prefixes="xsl tei xs krp">
     
     <xsl:import href="./partials/shared.xsl"/>
     <xsl:import href="./partials/html_navbar.xsl"/>
@@ -30,8 +31,22 @@
         <!-- CHANGE: replace series title with document title, because this is the correct title of the edition unit -->
         <xsl:value-of select=".//tei:titleStmt/tei:title[2]/text()"/>
     </xsl:variable>
-
-
+    <!-- CHANGE: add path to large-segment divs for creating navigation sidebar -->
+    <xsl:variable name="seg_path" select=".//tei:body/tei:div[tei:head[@type='dokument']]/tei:div"/>
+    
+    <!-- CHANGE: map div-type values to normalized headings for side-bar navigation -->
+    <xsl:function name="krp:map-label" as="xs:string">
+        <xsl:param name="in" as="xs:string"/>
+        <xsl:sequence select="
+            if ($in = 'dokumentkopf') then 'Dokumentkopf' 
+            else if ($in = 'komponenten') then 'Komponenten' 
+            else if ($in = 'beilagen') then 'Beilagen' 
+            else if ($in = 'protokoll') then 'Protokoll' 
+            else if ($in = 'stenogramme') then 'Stenogramme' 
+            else if ($in = 'anhaenge') then 'Anhänge' 
+            else concat(upper-case(substring($in, 1, 1)), substring($in, 2))"/>
+    </xsl:function>
+    
     <xsl:template match="/">
         <html class="h-100" lang="{$default_lang}">
             <head>
@@ -66,6 +81,13 @@
                             </li>
                         </ol>
                     </nav>
+                    <xsl:if test="exists($seg_path)">
+                        <nav aria-label="Dokumentabschnitte">
+                            <ul>
+                                <xsl:apply-templates select="$seg_path" mode="segnav"/>
+                            </ul>
+                        </nav>
+                    </xsl:if>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-2 col-lg-2 col-sm-12 text-start">
@@ -157,6 +179,25 @@
         <h2>
             <xsl:apply-templates/>
         </h2>
+    </xsl:template>
+    
+    <!-- CHANGE: transform large-segment XML div @type into HTML div @id attributes;
+         add hidden headings for sidebar navigation -->
+    <xsl:template match="tei:body//tei:div[tei:head[@type='dokument']]/tei:div">
+        <xsl:variable name="type-id" select="@type"/>
+        <div>
+            <xsl:attribute name="id" select="$type-id"/>
+            <h3 class="visually-hidden"><xsl:value-of select="krp:map-label($type-id)"/></h3>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+    <!-- CHANGE: get navigation-sidebar links from large-segment div @type values -->
+    <xsl:template match="tei:body//tei:div[tei:head[@type='dokument']]/tei:div" mode="segnav">
+        <xsl:variable name="type-id" select="@type"/>
+        <li>
+            <a href="#{$type-id}"><xsl:value-of select="krp:map-label($type-id)"/></a>
+        </li>
     </xsl:template>
 
 </xsl:stylesheet>
