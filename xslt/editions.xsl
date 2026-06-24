@@ -82,7 +82,9 @@
                         </ol>
                     </nav>
                     <div class="container">
+                        
                         <div class="row">
+                            
                             <div class="col-md-2 col-lg-2 col-sm-12 text-start">
                                 <xsl:if test="ends-with($prev,'.html')">
                                     <a>
@@ -95,6 +97,7 @@
                                     </a>
                                 </xsl:if>
                             </div>
+
                             <div class="col-md-8 col-lg-8 col-sm-12 text-center">
                                 <h1>
                                     <xsl:value-of select="$doc_title"/>
@@ -107,6 +110,7 @@
                                     </a>
                                 </div>
                             </div>
+
                             <div class="col-md-2 col-lg-2 col-sm-12 text-end">
                                 <xsl:if test="ends-with($next, '.html')">
                                     <a>
@@ -119,8 +123,26 @@
                                     </a>
                                 </xsl:if>
                             </div>
+
                         </div>
+                        
+                        <!-- CHANGE: add flex-box row for positioning navigation-sidebar beside main content -->
                         <div class="row">
+                            
+                            <!-- CHANGE: add 3-of-12-wide column to hold sticky navigation sidebar;
+                                 add as first column for keyboard tab order and stacking above on narrow screens -->
+                            <div class="col-lg-3">
+                                <xsl:if test="exists($seg_path)">
+                                    <nav aria-labelledby="segnav-title" class="sticky-lg-top">
+                                        <strong id="segnav-title">Dokumentabschnitte</strong>
+                                        <ul>
+                                            <xsl:apply-templates select="$seg_path" mode="segnav"/>
+                                        </ul>
+                                    </nav>
+                                </xsl:if>
+                            </div>
+                            
+                            <!-- CHANGE: wrap main content in 9-of-12-wide column -->
                             <div class="col-lg-9">
                                 <xsl:apply-templates select=".//tei:body"></xsl:apply-templates>
                                 <p style="text-align:center;">
@@ -150,16 +172,7 @@
                                     </xsl:for-each>
                                 </p>
                             </div>
-                            <div class="col-lg-3">
-                                <xsl:if test="exists($seg_path)">
-                                    <nav aria-labelledby="segnav-title" class="sticky-lg-top">
-                                        <strong id="segnav-title">Dokumentabschnitte</strong>
-                                        <ul>
-                                            <xsl:apply-templates select="$seg_path" mode="segnav"/>
-                                        </ul>
-                                    </nav>
-                                </xsl:if>
-                            </div>
+
                         </div>
 
                         <!-- <div class="text-center p-4">
