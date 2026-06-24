@@ -152,7 +152,8 @@
                             </div>
                             <div class="col-lg-3">
                                 <xsl:if test="exists($seg_path)">
-                                    <nav aria-label="Dokumentabschnitte">
+                                    <nav aria-labelledby="segnav-title" class="sticky-lg-top">
+                                        <strong id="segnav-title">Dokumentabschnitte</strong>
                                         <ul>
                                             <xsl:apply-templates select="$seg_path" mode="segnav"/>
                                         </ul>
