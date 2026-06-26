@@ -48,6 +48,11 @@ except ObjectNotFound:
 current_schema = {
     "name": COLLECTION_NAME,
     "enable_nested_fields": True,
+    "metadata": {
+        "owners": ["Peter Andorfer", "Timo Frühwirth"],
+        "description": "https://github.com/krp-project/krp-static",
+        "service_ids": [28081],
+    },
     "fields": [
         {"name": "id", "type": "string"},
         {"name": "rec_id", "type": "string", "sort": True},
