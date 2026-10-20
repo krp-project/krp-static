@@ -45,24 +45,22 @@
         <br/>
     </xsl:template>
 
-    <xsl:template match="tei:note[@type='footnote']"><!-- CHANGE: limit footnote handling to notes intended as such -->
+    <!-- CHANGE: limit footnote handling to notes intended as such -->
+    <xsl:template match="tei:note[@type='footnote']">
         <xsl:element name="a">
             <xsl:attribute name="name">
                 <xsl:text>fna_</xsl:text>
-                <!-- <xsl:number level="any" format="1" count="tei:note"/> -->
-                <xsl:value-of select="@n"/><!-- CHANGE: use tei:note/@n for numbering footnotes -->
+                <xsl:number level="any" format="1" count="tei:note[@type='footnote']"/>
             </xsl:attribute>
             <xsl:attribute name="href">
                 <xsl:text>#fn</xsl:text>
-                <!-- <xsl:number level="any" format="1" count="tei:note"/> -->
-                <xsl:value-of select="@n"/>
+                <xsl:number level="any" format="1" count="tei:note[@type='footnote']"/>
             </xsl:attribute>
             <xsl:attribute name="title">
                 <xsl:value-of select="normalize-space(.)"/>
             </xsl:attribute>
             <sup>
-                <!-- <xsl:number level="any" format="1" count="tei:note"/> -->
-                <xsl:value-of select="@n"/>
+                <xsl:number level="any" format="1" count="tei:note[@type='footnote']"/>
             </sup>
         </xsl:element>
     </xsl:template>
