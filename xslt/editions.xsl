@@ -137,6 +137,9 @@
                                         <strong id="segnav-title">Dokumentabschnitte</strong>
                                         <ul>
                                             <xsl:apply-templates select="$seg_path" mode="segnav"/>
+                                            <xsl:if test="exists(//tei:note[@type='footnote'])">
+                                                <li><a href="#apparat">Apparat</a></li>
+                                            </xsl:if>
                                         </ul>
                                     </nav>
                                 </xsl:if>
@@ -146,30 +149,35 @@
                             <div class="col-lg-9">
                                 <xsl:apply-templates select=".//tei:body"></xsl:apply-templates>
                                 <p style="text-align:center;">
-                                    <!-- <xsl:for-each select=".//tei:note[not(./tei:p)]"> -->
-                                    <xsl:for-each select=".//tei:note[@type='footnote']"><!-- CHANGE: limit footnote handling to notes intended as such -->
-                                        <div class="footnotes">
-                                            <xsl:element name="a">
-                                                <xsl:attribute name="name">
-                                                    <xsl:text>fn</xsl:text>
-                                                    <!-- <xsl:number level="any" format="1" count="tei:note"/> -->
-                                                    <xsl:value-of select="@n"/><!-- CHANGE: use tei:note/@n for numbering footnotes -->
-                                                </xsl:attribute>
-                                                <a>
-                                                    <xsl:attribute name="href">
-                                                        <xsl:text>#fna_</xsl:text>
-                                                        <!-- <xsl:number level="any" format="1" count="tei:note"/> -->
-                                                        <xsl:value-of select="@n"/>
-                                                    </xsl:attribute>
-                                                    <span style="font-size:7pt;vertical-align:super; margin-right: 0.4em">
-                                                        <!-- <xsl:number level="any" format="1" count="tei:note"/> -->
-                                                        <xsl:value-of select="@n"/>
-                                                    </span>
-                                                </a>
-                                            </xsl:element>
-                                            <xsl:apply-templates/>
+                                    <!-- CHANGE: if XML document includes footnotes,
+                                         add div (as jump target for navigation sidebar) with heading for holding them -->
+                                    <xsl:if test="exists(//tei:note[@type='footnote'])">
+                                        <div id="apparat">
+                                            <h3 class="visually-hidden">Apparat</h3>
+                                            <!-- <xsl:for-each select=".//tei:note[not(./tei:p)]"> -->
+                                            <!-- CHANGE: limit footnote handling to notes intended as such -->
+                                            <xsl:for-each select=".//tei:note[@type='footnote']">
+                                                <div class="footnotes">
+                                                    <xsl:element name="a">
+                                                        <xsl:attribute name="name">
+                                                            <xsl:text>fn</xsl:text>
+                                                            <xsl:number level="any" format="1" count="tei:note[@type='footnote']"/>
+                                                        </xsl:attribute>
+                                                        <a>
+                                                            <xsl:attribute name="href">
+                                                                <xsl:text>#fna_</xsl:text>
+                                                                <xsl:number level="any" format="1" count="tei:note[@type='footnote']"/>
+                                                            </xsl:attribute>
+                                                            <span style="font-size:7pt;vertical-align:super; margin-right: 0.4em">
+                                                                <xsl:number level="any" format="1" count="tei:note[@type='footnote']"/>
+                                                            </span>
+                                                        </a>
+                                                    </xsl:element>
+                                                    <xsl:apply-templates/>
+                                                </div>
+                                            </xsl:for-each>
                                         </div>
-                                    </xsl:for-each>
+                                    </xsl:if>
                                 </p>
                             </div>
 
