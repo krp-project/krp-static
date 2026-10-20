@@ -1,14 +1,16 @@
 # bin/bash
 
+BRANCH=dev
+
 echo "fetching transkriptions from data_repo"
 rm -rf data/
-curl -LO https://github.com/krp-project/krp-data/archive/refs/heads/main.zip
-unzip main
+curl -LO https://github.com/krp-project/krp-data/archive/refs/heads/${BRANCH}.zip
+unzip ${BRANCH}
 
-mv ./krp-data-main/data/ .
+mv ./krp-data-${BRANCH}/data/ .
 
-rm main.zip
-rm -rf ./krp-data-main
+rm ${BRANCH}.zip
+rm -rf ./krp-data-${BRANCH}
 
 echo "fetch imprint"
 ./shellscripts/dl_imprint.sh
