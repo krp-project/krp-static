@@ -65,3 +65,8 @@ div#map {
 .letterspaced {
     letter-spacing:0.15em;
 }
+
+/* Put TOP number on separate line as in source material */
+.top-number {
+    display: block;
+}

@@ -219,6 +219,19 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+
+    <!-- CHANGE: transform TOP <head>s (as well as those of "notop" sections) into <h4>s;
+         make TOP number addressable for CSS handling -->
+    <xsl:template match="tei:div[@type = 'top' or @type = 'notop']/tei:head">
+        <h4 class="top-title">
+            <xsl:apply-templates/>
+        </h4>
+    </xsl:template>
+    <xsl:template match="tei:div[@type = 'top' or @type = 'notop']/tei:head/tei:label/tei:num">
+        <span class="top-number">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     
     <!-- CHANGE: get navigation-sidebar links from large-segment div @type values -->
     <xsl:template match="tei:body//tei:div[tei:head[@type='dokument']]/tei:div" mode="segnav">
