@@ -118,7 +118,8 @@
                         <xsl:text>smallcaps</xsl:text>
                     </xsl:attribute>
                 </xsl:when>
-                <xsl:when test="@rendition = '#bold'">
+                <!-- <xsl:when test="@rendition = '#bold'"> -->
+                <xsl:when test="@rendition = '#bold' or @rend = '#b'"><!-- CHANGE: align with MRP rendition specifications -->
                     <xsl:attribute name="class">
                         <xsl:text>bold</xsl:text>
                     </xsl:attribute>
@@ -127,6 +128,16 @@
                 <xsl:when test="@rend = '#letterspaced'">
                     <xsl:attribute name="class">
                         <xsl:text>letterspaced</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:when test="@rend = '#s'">
+                    <xsl:attribute name="class">
+                        <xsl:text>strikethrough</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:when test="@rend = '#u'">
+                    <xsl:attribute name="class">
+                        <xsl:text>underline</xsl:text>
                     </xsl:attribute>
                 </xsl:when>
             </xsl:choose>

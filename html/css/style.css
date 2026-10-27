@@ -62,8 +62,17 @@ div#map {
 .italic {
     font-style:italic;
 }
+.bold {
+    font-weight:bold;
+}
 .letterspaced {
     letter-spacing:0.15em;
+}
+.strikethrough {
+    text-decoration:line-through;
+}
+.underline {
+    text-decoration:underline;
 }
 
 /* Put TOP number on separate line as in source material */
