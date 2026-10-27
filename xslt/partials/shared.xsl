@@ -83,6 +83,7 @@
     </xsl:template> -->
     
     <!-- CHANGE: handle un-typed lists, both flat and nested;
+         preserve list-marker markup;
          replace obsolete class value with Bootstrap values -->
     <xsl:template match="tei:list[ancestor::tei:body]">
         <ul class="list-unstyled ms-3">
@@ -91,6 +92,11 @@
     </xsl:template>
     <xsl:template match="tei:item[parent::tei:list[ancestor::tei:body]]">
         <li><xsl:apply-templates/></li>
+    </xsl:template>
+    <xsl:template match="tei:label[parent::tei:item[ancestor::tei:body]]">
+        <span class="label">
+            <xsl:apply-templates/>
+        </span>
     </xsl:template>
     
     <xsl:template match="tei:hi">
