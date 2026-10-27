@@ -70,3 +70,8 @@ div#map {
 .top-number {
     display: block;
 }
+
+/* Put list marker on same line with paragraph in multi-paragraph list items */
+.label + p {
+    display: inline;
+}
