@@ -2,7 +2,7 @@
 
 Static Website of the [Minutes of the Austrian Cabinet Council 1919–1920](https://doi.org/10.55776/PAT1495024) project
 
-* data is fetched from https://github.com/krp-project/krp-data
+* data are fetched from https://github.com/krp-project/krp-data (edition XMLs and project pages) and https://github.com/krp-project/krp-baserow-dump (index XMLs, generated from Baserow data)
 * build with [DSE-Static-Cookiecutter](https://github.com/acdh-oeaw/dse-static-cookiecutter)
 
 
