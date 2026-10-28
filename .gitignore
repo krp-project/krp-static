@@ -3,11 +3,12 @@
 html/*.xml
 html/beacon.txt
 /html/oai-pmh
-data/imprint.xml
+# data/imprint.xml
 
-data/indices/*.xml
-data/editions/*.xml
-data/meta/*.xml
+# data/indices/*.xml
+# data/editions/*.xml
+# data/meta/*.xml
+/data/
 
 
 # Byte-compiled / optimized / DLL files
