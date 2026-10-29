@@ -57,10 +57,15 @@
                         <table id="myTable">
                             <thead>
                                 <tr>
-                                    <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
+                                    <!-- <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
                                     <th scope="col" tabulator-headerFilter="input">Nachname</th>
-                                    <th scope="col" tabulator-headerFilter="input">Vorname</th>
-                                    <th scope="col" tabulator-headerFilter="input">ID</th>
+                                    <th scope="col" tabulator-headerFilter="input">Vorname</th> -->
+                                    <!-- CHANGE: adapt to project-specific name conventions (one label only); add mentions as in akademie-static -->
+                                    <th scope="col" tabulator-headerFilter="input" tabulator-formatter="html" tabulator-download="false">Name</th>
+                                    <th scope="col" tabulator-sorter="number">Erwähnungen</th>
+                                    <!-- <th scope="col" tabulator-headerFilter="input">ID</th> -->
+                                    <!-- CHANGE: hide ID column as in akademie-static -->
+                                    <th scope="col" tabulator-visible="false" tabulator-download="true">ID</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,7 +74,7 @@
                                         <xsl:value-of select="data(@xml:id)"/>
                                     </xsl:variable>
                                     <tr>
-                                        <td>
+                                        <!-- <td>
                                             <a>
                                               <xsl:attribute name="href">
                                               <xsl:value-of select="concat($id, '.html')"/>
@@ -82,6 +87,15 @@
                                         </td>
                                         <td>
                                             <xsl:value-of select=".//tei:forename/text()"/>
+                                        </td> -->
+                                        <!-- CHANGE: adapt to project-specific name conventions (one label only); add mentions as in akademie-static -->
+                                        <td>
+                                            <a href="{$id}.html">
+                                                <xsl:value-of select="./tei:persName"/>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <xsl:value-of select="count(./tei:noteGrp/tei:note[@type='mentions'])"/>
                                         </td>
                                         <td>
                                             <xsl:value-of select="$id"/>
