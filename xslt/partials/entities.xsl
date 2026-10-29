@@ -119,13 +119,34 @@
                     <xsl:value-of select="./tei:birth/tei:date"/>
                 </dd>
             </xsl:if>
+            <!-- CHANGE: add birth place information as in akademie-static -->
+            <xsl:if test="./tei:birth/tei:placeName">
+                <dt>Geburtsort</dt>
+                <dd>
+                    <xsl:value-of select="./tei:birth/tei:placeName"/>
+                </dd>
+            </xsl:if>
             <xsl:if test="./tei:death/tei:date">
                 <dt>Sterbedatum</dt>
                 <dd>
                     <xsl:value-of select="./tei:death/tei:date"/>
                 </dd>
             </xsl:if>
-            <xsl:if test="./tei:idno">
+             <!-- CHANGE: add death place information as in akademie-static -->
+            <xsl:if test="./tei:death/tei:placeName">
+                <dt>Sterbeort</dt>
+                <dd>
+                    <xsl:value-of select="./tei:death/tei:placeName"/>
+                </dd>
+            </xsl:if>
+            <!-- CHANGE: add occupation information as in akademie-static -->
+            <xsl:if test="./tei:occupation">
+                <dt>Beruf</dt>
+                <dd>
+                    <xsl:value-of select="./tei:occupation"/>
+                </dd>
+            </xsl:if>
+            <!-- <xsl:if test="./tei:idno">
                 <dt>Identifiers</dt>
                 <xsl:for-each select="./tei:idno">
                     <dd>
@@ -141,6 +162,31 @@
                         </xsl:choose>
                     </dd>
                 </xsl:for-each>
+            </xsl:if> -->
+            <!-- CHANGE: model identifier-display after akademie-static -->
+            <xsl:if test="./tei:idno[@subtype='GND']/text()">
+                <dt>GND</dt>
+                <dd>
+                    <a href="{./tei:idno[@subtype='GND']}">
+                        <xsl:value-of select="tokenize(./tei:idno[@subtype='GND'], '/')[last()]"/>
+                    </a>
+                </dd>
+            </xsl:if>
+            <xsl:if test="./tei:idno[@subtype='WIKIDATA']/text()">
+                <dt>Wikidata</dt>
+                <dd>
+                    <a href="{./tei:idno[@subtype='WIKIDATA']}">
+                        <xsl:value-of select="tokenize(./tei:idno[@subtype='WIKIDATA'], '/')[last()]"/>
+                    </a>
+                </dd>
+            </xsl:if>
+            <xsl:if test="./tei:idno[@subtype='MRP']/text()">
+                <dt>MRP</dt>
+                <dd>
+                    <a href="{./tei:idno[@subtype='MRP']}">
+                        <xsl:value-of select="tokenize(./tei:idno[@subtype='MRP'], '/')[last() - 1]"/>
+                    </a>
+                </dd>
             </xsl:if>
             <xsl:if test="./tei:noteGrp/tei:note[@type = 'mentions']">
                 <dt>Erwähnt in</dt>
