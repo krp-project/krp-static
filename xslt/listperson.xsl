@@ -105,11 +105,11 @@
                             </tbody>
                         </table>
                         <xsl:call-template name="tabulator_dl_buttons"/>
-                        <div class="text-center p-4">
+                        <!-- <div class="text-center p-4">
                             <xsl:call-template name="blockquote">
                                 <xsl:with-param name="pageId" select="'listperson.html'"/>
                             </xsl:call-template>
-                        </div>
+                        </div> -->
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
@@ -151,11 +151,11 @@
                                     <xsl:value-of select="$name"/>
                                 </h1>
                                 <xsl:call-template name="person_detail"/>
-                                <div class="text-center p-4">
+                                <!-- <div class="text-center p-4">
                                     <xsl:call-template name="blockquote">
                                         <xsl:with-param name="pageId" select="$filename"/>
                                     </xsl:call-template>
-                                </div> 
+                                </div>  -->
                             </div>
                         </main>
                         <xsl:call-template name="html_footer"/>
