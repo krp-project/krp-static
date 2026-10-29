@@ -190,13 +190,16 @@
             </xsl:if>
             <xsl:if test="./tei:noteGrp/tei:note[@type = 'mentions']">
                 <dt>Erwähnt in</dt>
-                <dd>
+                <!-- <dd> -->
+                <!-- CHANGE: move dd inside for-each loop so that every mention gets own entry -->
                     <xsl:for-each select="./tei:noteGrp/tei:note[@type = 'mentions']">
+                    <dd>
                         <a href="{replace(@target, '.xml', '.html')}">
                             <xsl:value-of select="./text()"/>
                         </a>
+                    </dd>
                     </xsl:for-each>
-                </dd>
+                <!-- </dd> -->
             </xsl:if>
         </dl>
     </xsl:template>
