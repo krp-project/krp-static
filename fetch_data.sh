@@ -28,3 +28,6 @@ uv run add-attributes -g "./data/editions/*.xml" -b "https://id.acdh.oeaw.ac.at/
 
 echo "denormalizing indices"
 uv run denormalize-indices -f "./data/editions/*.xml" -i "./data/indices/*.xml" -x ".//tei:titleStmt/tei:title[@level='a']/text()"
+
+echo "removing noteGrps from index entries in editions"
+uv run pyscripts/rm_notegrps.py
