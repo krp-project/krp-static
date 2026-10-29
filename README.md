@@ -46,3 +46,5 @@ The projects also includes Saxon-HE, which is licensed separately under the Mozi
 ## accessibility
 
 axe detects three ARIA-hierarchy/label issues related to the Tabulator-enhanced table on toc.html. These arise from the library's runtime DOM and are not patched locally to avoid interference with Tabulator's own keyboard/screen-reader handling.
+
+Entity pop-ups can currently only be opened using the mouse.
