@@ -11,6 +11,7 @@
     <xsl:import href="./partials/html_footer.xsl"/>
     <xsl:import href="./partials/blockquote.xsl"/>
     <xsl:import href="./partials/zotero.xsl"/>
+    <xsl:import href="./partials/datatables_import.xsl"/>
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="yes" omit-xml-declaration="yes"/>
 
 
@@ -26,6 +27,7 @@
                     <xsl:with-param name="pageId" select="$link"></xsl:with-param>
                     <xsl:with-param name="zoteroTitle" select="$doc_title"></xsl:with-param>
                 </xsl:call-template>
+                <xsl:call-template name="datatables_import"/>
             </head>
             
             <body class="d-flex flex-column h-100">
@@ -45,17 +47,18 @@
                     </nav>
                     <div class="container">
                         <h1><xsl:value-of select="$doc_title"/></h1>
-                        <table id="myTable">
+                        <div id="custom-info-box" class="text-muted small text-center"></div>
+                        <table id="myTable" class="table table-striped">
                             <thead>
+                                <!-- CHANGE: aligned with tillich-briefe-static -->
                                 <tr>
                                     <!-- <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th> -->
                                     <!-- <th scope="col" tabulator-headerFilter="input">Titel</th>
                                     <th scope="col" tabulator-headerFilter="input">Dateinname</th> -->
-                                    <!-- CHANGE: adopt from tillich-briefe-static -->
-                                    <th scope="col" tabulator-headerFilter="input" tabulator-formatter="html" tabulator-download="false" tabulator-minWidth="280">Titel</th>
-                                    <th scope="col" tabulator-visible="false" tabulator-download="true">titel_</th><!-- CHANGE: remove tabulator-headerFilter -->
-                                    <th scope="col" tabulator-headerFilter="input" tabulator-download="true" tabulator-minWidth="180">Dateinname</th><!-- CHANGE: add explicit tabulator-download -->
-                                    <th scope="col" tabulator-field="id" tabulator-visible="false" tabulator-download="false">ID</th>
+                                    <th scope="col">Titel</th>
+                                    <th scope="col" data-dt-visible="false">titel_</th>
+                                    <th scope="col">Dateinname</th>
+                                    <th scope="col" data-dt-visible="false">ID</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -111,6 +114,7 @@
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
+                <script src="js/datatables_custom/datatables_custom.js"></script>
 
             </body>
         </html>
