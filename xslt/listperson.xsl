@@ -12,6 +12,7 @@
     <xsl:import href="./partials/entities.xsl"/>
     <xsl:import href="./partials/blockquote.xsl"/>
     <xsl:import href="./partials/zotero.xsl"/>
+    <xsl:import href="./partials/datatables_import.xsl"/>
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="yes" omit-xml-declaration="yes"/>
 
 
@@ -30,6 +31,7 @@
                     <xsl:with-param name="pageId" select="$link"></xsl:with-param>
                     <xsl:with-param name="zoteroTitle" select="$doc_title"></xsl:with-param>
                 </xsl:call-template>
+                <xsl:call-template name="datatables_import"/>
             </head>
             
             <body class="d-flex flex-column h-100">
@@ -51,19 +53,19 @@
                         <h1>
                             <xsl:value-of select="$doc_title"/>
                         </h1>
-
-                        <table id="myTable">
+                        <div id="custom-info-box" class="text-muted small text-center"></div>
+                        <table id="myTable" class="table table-striped">
                             <thead>
                                 <tr>
                                     <!-- <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
                                     <th scope="col" tabulator-headerFilter="input">Nachname</th>
                                     <th scope="col" tabulator-headerFilter="input">Vorname</th> -->
                                     <!-- CHANGE: adapt to project-specific name conventions (one label only); add mentions as in akademie-static -->
-                                    <th scope="col" tabulator-headerFilter="input" tabulator-formatter="html" tabulator-download="false">Name</th>
-                                    <th scope="col" tabulator-sorter="number">Erwähnungen</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Erwähnungen</th>
                                     <!-- <th scope="col" tabulator-headerFilter="input">ID</th> -->
                                     <!-- CHANGE: hide ID column as in akademie-static -->
-                                    <th scope="col" tabulator-visible="false" tabulator-download="true">ID</th>
+                                    <th scope="col" data-dt-visible="false">ID</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -110,6 +112,7 @@
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
+                <script src="js/datatables_custom/datatables_custom.js"></script>
             </body>
         </html>
 
