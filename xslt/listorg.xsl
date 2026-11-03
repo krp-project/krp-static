@@ -12,6 +12,7 @@
     <xsl:import href="./partials/entities.xsl"/>
     <xsl:import href="./partials/blockquote.xsl"/>
     <xsl:import href="./partials/zotero.xsl"/>
+    <xsl:import href="./partials/datatables_import.xsl"/>
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="yes" omit-xml-declaration="yes"/> 
 
     <xsl:template match="/">
@@ -20,7 +21,6 @@
         </xsl:variable>
         <xsl:variable name="link" select="'listorg.html'"/>
         <html class="h-100" lang="{$default_lang}">
-
             <head>
                 <xsl:call-template name="html_head">
                     <xsl:with-param name="html_title" select="$doc_title"></xsl:with-param>
@@ -29,11 +29,12 @@
                     <xsl:with-param name="pageId" select="$link"></xsl:with-param>
                     <xsl:with-param name="zoteroTitle" select="$doc_title"></xsl:with-param>
                 </xsl:call-template>
+                <xsl:call-template name="datatables_import"/>
             </head>
             
             <body class="d-flex flex-column h-100">
                 <xsl:call-template name="nav_bar"/>
-                    <main class="flex-shrink-0 flex-grow-1">
+                    <main id="main" tabindex="-1" class="flex-shrink-0 flex-grow-1">
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="ps-5 p-3">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
@@ -50,13 +51,13 @@
                             <h1>
                                 <xsl:value-of select="$doc_title"/>
                             </h1>
+                            <div id="custom-info-box" class="text-muted small text-center"></div>
                             
-                            <table id="myTable">
+                            <table id="myTable" class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th scope="col" width="20" tabulator-formatter="html" tabulator-headerSort="false" tabulator-download="false">#</th>
-                                        <th scope="col" tabulator-headerFilter="input">Name</th>
-                                        <th scope="col" tabulator-headerFilter="input">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">ID</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -66,15 +67,9 @@
                                         </xsl:variable>
                                         <tr>
                                             <td>
-                                                <a>
-                                                  <xsl:attribute name="href">
-                                                  <xsl:value-of select="concat($id, '.html')"/>
-                                                  </xsl:attribute>
-                                                  <i class="bi bi-link-45deg"/>
+                                                <a href="{$id||'.html'}">
+                                                    <xsl:value-of select=".//tei:orgName[1]/text()"/>
                                                 </a>
-                                            </td>
-                                            <td>
-                                                <xsl:value-of select=".//tei:orgName[1]/text()"/>
                                             </td>
                                             <td>
                                                 <xsl:value-of select="$id"/>
@@ -91,6 +86,7 @@
                         </div>
                     </main>
                     <xsl:call-template name="html_footer"/>
+                    <script src="js/datatables_custom/datatables_custom.js"></script>
             </body>
         </html>
         <xsl:for-each select=".//tei:org">
@@ -109,7 +105,7 @@
                     </head>
                     <body class="d-flex flex-column h-100">
                         <xsl:call-template name="nav_bar"/>
-                        <main class="flex-shrink-0 flex-grow-1">
+                        <main id="main" tabindex="-1" class="flex-shrink-0 flex-grow-1">
                             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="ps-5 p-3">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
