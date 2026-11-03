@@ -9,8 +9,6 @@
     <xsl:import href="./partials/html_navbar.xsl"/>
     <xsl:import href="./partials/html_head.xsl"/>
     <xsl:import href="./partials/html_footer.xsl"/>
-    <xsl:import href="./partials/tabulator_dl_buttons.xsl"/>
-    <xsl:import href="./partials/tabulator_js.xsl"/>
     <xsl:import href="./partials/blockquote.xsl"/>
     <xsl:import href="./partials/zotero.xsl"/>
     <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="yes" omit-xml-declaration="yes"/>
@@ -105,7 +103,6 @@
                                 </xsl:for-each>
                             </tbody>
                         </table>
-                        <xsl:call-template name="tabulator_dl_buttons"/>
                         <!-- <div class="text-center p-4">
                             <xsl:call-template name="blockquote">
                                 <xsl:with-param name="pageId" select="'toc.html'"/>
@@ -114,11 +111,6 @@
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
-                <!-- <xsl:call-template name="tabulator_js"/> -->
-                <!-- CHANGE: include rowClick -->
-                <xsl:call-template name="tabulator_js">
-                    <xsl:with-param name="clickme" select="true()"/>
-                </xsl:call-template>
 
             </body>
         </html>
