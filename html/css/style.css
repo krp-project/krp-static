@@ -38,11 +38,6 @@ div#map {
     cursor: pointer;
 }
 
-/* Reduce Tabulator background color for accessibility */
-.tabulator-tableholder .tabulator-table .tabulator-row-even {
-  background-color: var(--dse-base-color-light);
-}
-
 /* Style Bootstrap buttons */
 .btn-primary {
     --bs-btn-bg: var(--dse-base-color);
