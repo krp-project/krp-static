@@ -141,7 +141,7 @@
             </xsl:if>
             <!-- CHANGE: add occupation information as in akademie-static -->
             <xsl:if test="./tei:occupation">
-                <dt>Beruf</dt>
+                <dt>Funktion</dt>
                 <dd>
                     <xsl:value-of select="./tei:occupation"/>
                 </dd>
