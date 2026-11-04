@@ -41,10 +41,10 @@
                                     <li>
                                         <a class="dropdown-item" href="listperson.html">Personen</a>
                                     </li>
-                                    <!-- CHANGE: disable links and prevent selection, remove href, tell screen reader -->
                                     <li>
-                                        <a class="dropdown-item disabled user-select-none" aria-disabled="true">Orte</a>
+                                        <a class="dropdown-item" href="listplace.html">Orte</a>
                                     </li>
+                                    <!-- CHANGE: disable links and prevent selection, remove href, tell screen reader -->
                                     <li>
                                         <a class="dropdown-item disabled user-select-none" aria-disabled="true">Organisationen</a>
                                     </li>
