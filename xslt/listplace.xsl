@@ -106,11 +106,11 @@
                                 </xsl:for-each>
                             </tbody>
                         </table>
-                        <div class="text-center p-4">
+                        <!-- <div class="text-center p-4">
                             <xsl:call-template name="blockquote">
                                 <xsl:with-param name="pageId" select="'listplace.html'"/>
                             </xsl:call-template>
-                        </div>
+                        </div> -->
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
@@ -154,11 +154,11 @@
                                 <xsl:if test="./tei:location/tei:geo">
                                     <div id="map_detail"/>
                                 </xsl:if>
-                                <div class="text-center p-4">
+                                <!-- <div class="text-center p-4">
                                     <xsl:call-template name="blockquote">
                                         <xsl:with-param name="pageId" select="$filename"/>
                                     </xsl:call-template>
-                                </div>
+                                </div> -->
                             </div>
                         </main>
                         <xsl:call-template name="html_footer"/>
