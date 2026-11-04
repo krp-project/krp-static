@@ -119,11 +119,20 @@
                     <xsl:value-of select="./tei:birth/tei:date"/>
                 </dd>
             </xsl:if>
-            <!-- CHANGE: add birth place information as in akademie-static -->
+            <!-- CHANGE: add birth place information as in akademie-static; link to place page if referenced -->
             <xsl:if test="./tei:birth/tei:placeName">
                 <dt>Geburtsort</dt>
                 <dd>
-                    <xsl:value-of select="./tei:birth/tei:placeName"/>
+                    <xsl:choose>
+                        <xsl:when test="./tei:birth/tei:placeName/@ref">
+                            <a href="{substring-after(./tei:birth/tei:placeName/@ref, '#')}.html">
+                                <xsl:value-of select="./tei:birth/tei:placeName"/>
+                            </a>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="./tei:birth/tei:placeName"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </dd>
             </xsl:if>
             <xsl:if test="./tei:death/tei:date">
@@ -132,11 +141,20 @@
                     <xsl:value-of select="./tei:death/tei:date"/>
                 </dd>
             </xsl:if>
-             <!-- CHANGE: add death place information as in akademie-static -->
+             <!-- CHANGE: add death place information as in akademie-static; link to place page if referenced -->
             <xsl:if test="./tei:death/tei:placeName">
                 <dt>Sterbeort</dt>
                 <dd>
-                    <xsl:value-of select="./tei:death/tei:placeName"/>
+                    <xsl:choose>
+                        <xsl:when test="./tei:death/tei:placeName/@ref">
+                            <a href="{substring-after(./tei:death/tei:placeName/@ref, '#')}.html">
+                                <xsl:value-of select="./tei:death/tei:placeName"/>
+                            </a>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="./tei:death/tei:placeName"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </dd>
             </xsl:if>
             <!-- CHANGE: add occupation information as in akademie-static -->
