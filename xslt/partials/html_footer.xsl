@@ -30,7 +30,7 @@
                     <div class="col col-lg-4">
                         <div>
                             <a href="https://rechtsgeschichte.univie.ac.at">
-                                <img class="footerlogo" src="./images/Logo_Universitaet_Wien_Farbe.svg" alt="Universität Wien"/>
+                                <img class="footerlogo" src="./images/logos/Logo_Universitaet_Wien_Farbe.svg" alt="Universität Wien"/>
                             </a>
                         </div>
                         <div class="text-center p-4">
@@ -43,7 +43,7 @@
                     <div class="col col-lg-4">
                         <div>
                             <a href="https://www.oesta.gv.at">
-                                <img class="footerlogo" src="./images/BKA_Oesterreichisches-Staatsarchiv_Logo_srgb.png" alt="Österreichisches Staatsarchiv"/>
+                                <img class="footerlogo" src="./images/logos/Logo_OestA.png" alt="Österreichisches Staatsarchiv"/>
                             </a>
                         </div>
                         <div class="text-center p-4">
@@ -89,7 +89,7 @@
                     <div class="col col-lg-4">
                         <div>
                             <a href="https://doi.org/10.55776/PAT1495024">
-                                <img class="footerlogo" src="./images/FWF_Logo_Zusatz_Blau_RGB_DE.svg" alt="Wissenschaftsfonds FWF"/>
+                                <img class="footerlogo" src="./images/logos/FWF_Logo_Zusatz_Blau_RGB_DE.svg" alt="Wissenschaftsfonds FWF"/>
                             </a>
                         </div>
                         <div class="text-center p-4">
