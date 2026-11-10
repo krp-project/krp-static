@@ -55,7 +55,7 @@
                     <div class="col col-lg-4">
                         <div>
                             <a href="https://www.oeaw.ac.at/acdh/acdh-home">
-                                <img class="footerlogo" src="./images/acdh_logo_with_text_color.svg" alt="Austrian Centre for Digital Humanities"/>
+                                <img class="footerlogo" src="./images/logos/acdh_logo_with_text_blackmelt_2026.svg" alt="Austrian Centre for Digital Humanities"/>
                             </a>
                         </div>
                         <div class="text-center p-4">
@@ -77,7 +77,7 @@
                     <div class="col col-lg-4">
                         <div>
                             <a href="https://www.protokolleditionen.eu">
-                                <img class="footerlogo" src="./images/Logo_Protokolleditionen_1a.svg" alt="Arbeitskreis Digitale Protokolleditionen"/>
+                                <img class="footerlogo" src="./images/logos/Logo_Protokolleditionen_1a.svg" alt="Arbeitskreis Digitale Protokolleditionen"/>
                             </a>
                         </div>
                         <div class="text-center p-4">
