@@ -5,45 +5,50 @@ Static Website of the [Minutes of the Austrian Cabinet Council 1919–1920](http
 * data are fetched from https://github.com/krp-project/krp-data (edition XMLs and project pages) and https://github.com/krp-project/krp-baserow-dump (index XMLs, generated from Baserow data)
 * build with [DSE-Static-Cookiecutter](https://github.com/acdh-oeaw/dse-static-cookiecutter)
 
-
-## initial (one time) setup
+## Initial (one time) setup
 
 * run `./fetch_data.sh`
 * run `ant`
 
-## set up GitHub repo
+## Set up GitHub repo
+
 * create a public, new, and empty (without README, .gitignore, license) GitHub repo https://github.com/krp-project/krp-static 
 * run `git init` in the root folder of your application krp-static
 * execute the commands described under `…or push an existing repository from the command line` in your new created GitHub repo https://github.com/krp-project/krp-static
 
-## start dev server
+## Start dev server
 
 * `cd html/`
 * `uv run -m http.server`
 * go to [http://0.0.0.0:8000/](http://0.0.0.0:8000/)
 
-## publish as GitHub Page
+## Publish as GitHub Page
 
 * go to https://github.com/krp-project/krp-static/actions/workflows/build.yml
 * click the `Run workflow` button
 
-
-## dockerize your application
+## Dockerize your application
 
 * To build the image run: `docker build -f docker/Dockerfile -t krp-static .`
 * To run the container: `docker run -p 80:80 --rm --name krp-static krp-static`
 
-## licenses
+## Licenses
 
-This project is released under the [MIT License](LICENSE)
+This project is released under the [MIT License](LICENSE).
 
-### third-party JavaScript libraries
-The code for all third-party JavaScript libraries used is included in the `html/vendor` folder, their respective licenses can be found either in a `LICENSE.txt` file or directly in the header of the `.js` file
+### Third-party JavaScript libraries
+
+The code for all third-party JavaScript libraries used is included in the `html/vendor/` folder, their respective licenses can be found either in a `LICENSE.txt` file or directly in the header of the `.js` file.
 
 ### SAXON-HE
-The projects also includes Saxon-HE, which is licensed separately under the Mozilla Public License, Version 2.0 (MPL 2.0). See the dedicated [LICENSE.txt](saxon/notices/LICENSE.txt)
 
-## accessibility
+The project also includes Saxon-HE, which is licensed separately under the Mozilla Public License, Version 2.0 (MPL 2.0). See the dedicated [LICENSE.txt](saxon/notices/LICENSE.txt).
+
+### Images
+
+Images contained in the `html/images/logos/` folder may be subject to separate licenses or terms of use. See the dedicated [LICENSE.txt](html/images/logos/notices/LICENSE.txt).
+
+## Accessibility
 
 An automated scan with axe DevTools in November 2026 reported no issues on `toc.html` and `listperson.html`.
 
