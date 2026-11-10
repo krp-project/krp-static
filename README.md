@@ -46,7 +46,7 @@ The project also includes Saxon-HE, which is licensed separately under the Mozil
 
 ### Images
 
-Images contained in the `html/images/logos/` folder may be subject to separate licenses or terms of use. See the dedicated [LICENSE.txt](html/images/logos/notices/LICENSE.txt).
+Logo images contained in the `html/images/logos/` folder are subject to separate licenses or terms of use. See the dedicated [LICENSE](html/images/logos/notices/LICENSE.txt).
 
 ## Accessibility
 
