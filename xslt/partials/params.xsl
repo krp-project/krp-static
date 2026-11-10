@@ -10,7 +10,8 @@
     <xsl:param name="default_lang">de</xsl:param>
     <xsl:param name="github_url">https://github.com/krp-project/krp-static</xsl:param>
     <xsl:param name="html_title">KRP</xsl:param>
-    <xsl:param name="project_logo">images/logo.png</xsl:param>
+    <!-- CHANGE: move logo img to subfolder for licensing -->
+    <xsl:param name="project_logo">images/logos/logo.png</xsl:param>
     <xsl:param name="base_url">https://krp-project.github.io/krp-static/</xsl:param>
     <xsl:param name="data_repo">https://github.com/krp-project/krp-data</xsl:param>
 </xsl:stylesheet>
