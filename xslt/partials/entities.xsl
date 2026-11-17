@@ -108,11 +108,11 @@
                     </a>
                 </dd>
             </xsl:if>
-            <xsl:if test="./tei:idno[@subtype='MRP']/text()">
-                <dt>MRP</dt>
+            <xsl:if test="./tei:idno[@subtype='MPR']/text()">
+                <dt>MPR</dt>
                 <dd>
-                    <a href="{./tei:idno[@subtype='MRP']}">
-                        <xsl:value-of select="tokenize(./tei:idno[@subtype='MRP'], '/')[last() - 1]"/>
+                    <a href="{./tei:idno[@subtype='MPR']}">
+                        <xsl:value-of select="tokenize(./tei:idno[@subtype='MPR'], '/')[last() - 1]"/>
                     </a>
                 </dd>
             </xsl:if>
@@ -223,11 +223,11 @@
                     </a>
                 </dd>
             </xsl:if>
-            <xsl:if test="./tei:idno[@subtype='MRP']/text()">
-                <dt>MRP</dt>
+            <xsl:if test="./tei:idno[@subtype='MPR']/text()">
+                <dt>MPR</dt>
                 <dd>
-                    <a href="{./tei:idno[@subtype='MRP']}">
-                        <xsl:value-of select="tokenize(./tei:idno[@subtype='MRP'], '/')[last() - 1]"/>
+                    <a href="{./tei:idno[@subtype='MPR']}">
+                        <xsl:value-of select="tokenize(./tei:idno[@subtype='MPR'], '/')[last() - 1]"/>
                     </a>
                 </dd>
             </xsl:if>
@@ -334,11 +334,11 @@
                     </a>
                 </dd>
             </xsl:if>
-            <xsl:if test="./tei:idno[@subtype='MRP']/text()">
-                <dt>MRP</dt>
+            <xsl:if test="./tei:idno[@subtype='MPR']/text()">
+                <dt>MPR</dt>
                 <dd>
-                    <a href="{./tei:idno[@subtype='MRP']}">
-                        <xsl:value-of select="tokenize(./tei:idno[@subtype='MRP'], '/')[last() - 1]"/>
+                    <a href="{./tei:idno[@subtype='MPR']}">
+                        <xsl:value-of select="tokenize(./tei:idno[@subtype='MPR'], '/')[last() - 1]"/>
                     </a>
                 </dd>
             </xsl:if>
