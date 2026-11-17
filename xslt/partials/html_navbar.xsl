@@ -44,12 +44,11 @@
                                     <li>
                                         <a class="dropdown-item" href="listplace.html">Orte</a>
                                     </li>
-                                    <!-- CHANGE: disable links and prevent selection, remove href, tell screen reader -->
                                     <li>
-                                        <a class="dropdown-item disabled user-select-none" aria-disabled="true">Organisationen</a>
+                                        <a class="dropdown-item" href="listorg.html">Organisationen</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item disabled user-select-none" aria-disabled="true">Werke</a>
+                                        <a class="dropdown-item disabled user-select-none" aria-disabled="true">Werke</a><!-- CHANGE: disable links and prevent selection, remove href, tell screen reader -->
                                     </li>
                                 </ul>
                             </li>
