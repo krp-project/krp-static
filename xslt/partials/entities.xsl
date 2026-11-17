@@ -74,7 +74,7 @@
                     <xsl:value-of select="./tei:desc"/>
                 </dd>
             </xsl:if>
-            <xsl:if test="./tei:idno">
+            <!-- <xsl:if test="./tei:idno">
                 <dt>Identifiers</dt>
                 <xsl:for-each select="./tei:idno">
                     <dd>
@@ -90,6 +90,31 @@
                         </xsl:choose>
                     </dd>
                 </xsl:for-each>
+            </xsl:if> -->
+            <!-- CHANGE: model identifier-display after akademie-static -->
+            <xsl:if test="./tei:idno[@subtype='GND']/text()">
+                <dt>GND</dt>
+                <dd>
+                    <a href="{./tei:idno[@subtype='GND']}">
+                        <xsl:value-of select="tokenize(./tei:idno[@subtype='GND'], '/')[last()]"/>
+                    </a>
+                </dd>
+            </xsl:if>
+            <xsl:if test="./tei:idno[@subtype='WIKIDATA']/text()">
+                <dt>Wikidata</dt>
+                <dd>
+                    <a href="{./tei:idno[@subtype='WIKIDATA']}">
+                        <xsl:value-of select="tokenize(./tei:idno[@subtype='WIKIDATA'], '/')[last()]"/>
+                    </a>
+                </dd>
+            </xsl:if>
+            <xsl:if test="./tei:idno[@subtype='MRP']/text()">
+                <dt>MRP</dt>
+                <dd>
+                    <a href="{./tei:idno[@subtype='MRP']}">
+                        <xsl:value-of select="tokenize(./tei:idno[@subtype='MRP'], '/')[last() - 1]"/>
+                    </a>
+                </dd>
             </xsl:if>
             <xsl:if test="./tei:note">
                 <dt>Notiz</dt>
