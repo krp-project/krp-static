@@ -78,11 +78,11 @@
                                     </xsl:for-each>
                                 </tbody>
                             </table>
-                            <div class="text-center p-4">
+                            <!-- <div class="text-center p-4">
                                 <xsl:call-template name="blockquote">
                                     <xsl:with-param name="pageId" select="'listorg.html'"/>
                                 </xsl:call-template>
-                            </div>
+                            </div> -->
                         </div>
                     </main>
                     <xsl:call-template name="html_footer"/>
@@ -121,11 +121,11 @@
                                     <xsl:value-of select="$name"/>
                                 </h1>
                                 <xsl:call-template name="org_detail"/>
-                                <div class="text-center p-4">
+                                <!-- <div class="text-center p-4">
                                     <xsl:call-template name="blockquote">
                                         <xsl:with-param name="pageId" select="$filename"/>
                                     </xsl:call-template>
-                                </div>
+                                </div> -->
                             </div>
                         </main>
                         <xsl:call-template name="html_footer"/>
