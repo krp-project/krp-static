@@ -57,7 +57,11 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">ID</th>
+                                        <!-- CHANGE: add mentions as in akademie-static -->
+                                        <th scope="col">Erwähnungen</th>
+                                        <!-- <th scope="col">ID</th> -->
+                                        <!-- CHANGE: hide ID column as in akademie-static -->
+                                        <th scope="col" data-dt-visible="false">ID</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,6 +74,9 @@
                                                 <a href="{$id||'.html'}">
                                                     <xsl:value-of select=".//tei:orgName[1]/text()"/>
                                                 </a>
+                                            </td>
+                                            <td>
+                                                <xsl:value-of select="count(./tei:noteGrp/tei:note[@type='mentions'])"/>
                                             </td>
                                             <td>
                                                 <xsl:value-of select="$id"/>
