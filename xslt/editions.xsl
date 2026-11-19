@@ -237,12 +237,57 @@
             <xsl:apply-templates/>
         </span>
     </xsl:template>
-    
-    <!-- CHANGE: get navigation-sidebar links from large-segment div @type values -->
+
+    <!-- CHANGE: get navigation-sidebar links from large-segment div @type values,
+         as well as from lower-level div @n values for second layer-->
     <xsl:template match="tei:body//tei:div[tei:head[@type='dokument']]/tei:div" mode="segnav">
         <xsl:variable name="type-id" select="@type"/>
         <li class="nav-item">
             <a class="nav-link" href="#{$type-id}"><xsl:value-of select="krp:map-label($type-id)"/></a>
+            <xsl:choose>
+                <xsl:when test="$type-id = 'protokoll'">
+                    <ul class="nav flex-column">
+                        <xsl:for-each select="tei:div[@type]">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#{@xml:id}">
+                                    <xsl:choose>
+                                        <xsl:when test="@type = 'top'">
+                                            <xsl:value-of select="concat('Tagesordnungspunkt ', tei:head/tei:label/tei:num/@n)"/>
+                                        </xsl:when>
+                                        <xsl:when test="@type = 'notop'">
+                                            <xsl:value-of select="tei:head/tei:label"/>
+                                        </xsl:when>
+                                    </xsl:choose>
+                                </a>
+                            </li>
+                        </xsl:for-each>
+                    </ul>
+                </xsl:when>
+                <xsl:when test="$type-id = 'stenogramme'">
+                    <ul class="nav flex-column">
+                        <xsl:for-each select="tei:div[@n]">
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <xsl:attribute name="href" select="concat('#', krp:stenogramm-id(@n))"/>
+                                    <xsl:value-of select="concat('Stenogramm ', @n)"/>
+                                </a>
+                            </li>
+                        </xsl:for-each>
+                    </ul>
+                </xsl:when>
+                <xsl:when test="$type-id = 'anhaenge'">
+                    <ul class="nav flex-column">
+                        <xsl:for-each select="tei:div[@n]">
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <xsl:attribute name="href" select="concat('#', krp:anhang-id(@n))"/>
+                                    <xsl:value-of select="concat('Anhang ', @n)"/>
+                                </a>
+                            </li>
+                        </xsl:for-each>
+                    </ul>
+                </xsl:when>
+            </xsl:choose>
         </li>
     </xsl:template>
 
