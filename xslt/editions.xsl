@@ -60,8 +60,12 @@
                 <!-- Provide the names of the authors/editors of the current unit, ideally fetched from the data via xslt or hard coded as below -->
                 <meta name="citation_author" content="Foo, Bar"/>
                 <meta name="citation_author" content="Bar, Foo"/> 
+                <!-- CHANGE: link to stylesheet for sidebar navigation -->
+                <link rel="stylesheet" href="css/editions-toc.css" type="text/css"></link>
             </head>
-            <body class="d-flex flex-column h-100">
+            <!-- <body class="d-flex flex-column h-100"> -->
+            <!-- CHANGE: add Bootstrap ScrollSpy classes -->
+            <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#toc">
                 <xsl:call-template name="nav_bar"/>
                 <main id="main" tabindex="-1" class="flex-shrink-0 flex-grow-1">
                     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="ps-5 p-3">
@@ -133,12 +137,13 @@
                                  add as first column for keyboard tab order and stacking above on narrow screens -->
                             <div class="col-lg-3">
                                 <xsl:if test="exists($seg_path)">
-                                    <nav aria-labelledby="segnav-title" class="sticky-lg-top">
+                                    <!-- add Bootstrap nav classes and prepare for ScrollSpy -->
+                                    <nav id="toc" aria-labelledby="segnav-title" class="sticky-lg-top">
                                         <strong id="segnav-title">Dokumentabschnitte</strong>
-                                        <ul>
+                                        <ul class="nav flex-column">
                                             <xsl:apply-templates select="$seg_path" mode="segnav"/>
                                             <xsl:if test="exists(//tei:note[@type='footnote'])">
-                                                <li><a href="#apparat">Apparat</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="#apparat">Apparat</a></li>
                                             </xsl:if>
                                         </ul>
                                     </nav>
@@ -236,8 +241,8 @@
     <!-- CHANGE: get navigation-sidebar links from large-segment div @type values -->
     <xsl:template match="tei:body//tei:div[tei:head[@type='dokument']]/tei:div" mode="segnav">
         <xsl:variable name="type-id" select="@type"/>
-        <li>
-            <a href="#{$type-id}"><xsl:value-of select="krp:map-label($type-id)"/></a>
+        <li class="nav-item">
+            <a class="nav-link" href="#{$type-id}"><xsl:value-of select="krp:map-label($type-id)"/></a>
         </li>
     </xsl:template>
 
