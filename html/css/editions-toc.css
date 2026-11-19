@@ -14,7 +14,7 @@
     font-weight: 500;
 }
 
-/* #toc ul ul {
+#toc ul ul {
     border-left: 1px solid var(--bs-border-color);
 }
 
@@ -24,9 +24,16 @@
 
 #toc ul ul ul .nav-link {
     font-size: 0.725rem;
-} */
+}
 
+/*align with KRP color scheme*/
 #toc .nav-link.active {
-    color: var(--bs-primary);
-    border-left-color: var(--bs-primary);
+    color: var(--dse-base-color);
+    border-left-color: var(--dse-base-color);
+}
+
+/*for 2nd layer of sticky sidebar navigation:
+hide nested lists that follow after inactive 1st-layer link*/
+#toc ul a.nav-link:not(.active) + ul {
+    display: none;
 }
