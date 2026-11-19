@@ -37,3 +37,12 @@ hide nested lists that follow after inactive 1st-layer link*/
 #toc ul a.nav-link:not(.active) + ul {
     display: none;
 }
+
+/*above Bootstrap lg breakpoint (when sidebar is sticky),
+limit sidebar navigation to screen height and add scrollbar if it overflows*/
+@media (min-width: 992px) {
+    nav#toc {
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+    }
+}

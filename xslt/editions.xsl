@@ -135,7 +135,7 @@
                             
                             <!-- CHANGE: add 3-of-12-wide column to hold sticky navigation sidebar;
                                  add as first column for keyboard tab order and stacking above on narrow screens;
-                                 add Bootstrap nav classes and prepare for ScrollSpy-->
+                                 add Bootstrap nav classes and prepare for ScrollSpy as in arco-static-->
                             <div class="col-lg-3">
                                 <xsl:if test="exists($seg_path)">
                                     <nav id="toc" aria-labelledby="segnav-title" class="sticky-lg-top">
