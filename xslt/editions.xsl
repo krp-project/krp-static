@@ -246,4 +246,29 @@
         </li>
     </xsl:template>
 
+    <!-- CHANGE: add functions to create HTML id values from XML n values on divs
+         in stenogramm and anhaenge sections -->
+    <xsl:function name="krp:stenogramm-id" as="xs:string">
+        <xsl:param name="n-in" as="xs:string"/>
+        <xsl:sequence select="concat('stenogramm-', $n-in)"/>
+    </xsl:function>
+    <xsl:function name="krp:anhang-id" as="xs:string">
+        <xsl:param name="n-in" as="xs:string"/>
+        <xsl:sequence select="concat('anhang-', $n-in)"/>
+    </xsl:function>
+
+    <!-- CHANGE: create IDed stenogramm and anhang divs for handling in sidebar nav -->
+    <xsl:template match="tei:body//tei:div[@type='stenogramme']/tei:div[@n]">
+        <div>
+            <xsl:attribute name="id" select="krp:stenogramm-id(@n)"/>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="tei:body//tei:div[@type='anhaenge']/tei:div[@n]">
+        <div>
+            <xsl:attribute name="id" select="krp:anhang-id(@n)"/>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+
 </xsl:stylesheet>
