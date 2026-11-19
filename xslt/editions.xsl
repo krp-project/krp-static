@@ -64,7 +64,7 @@
                 <link rel="stylesheet" href="css/editions-toc.css" type="text/css"></link>
             </head>
             <!-- <body class="d-flex flex-column h-100"> -->
-            <!-- CHANGE: add Bootstrap ScrollSpy classes -->
+            <!-- CHANGE: add Bootstrap ScrollSpy data attributes -->
             <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#toc">
                 <xsl:call-template name="nav_bar"/>
                 <main id="main" tabindex="-1" class="flex-shrink-0 flex-grow-1">
@@ -134,10 +134,10 @@
                         <div class="row">
                             
                             <!-- CHANGE: add 3-of-12-wide column to hold sticky navigation sidebar;
-                                 add as first column for keyboard tab order and stacking above on narrow screens -->
+                                 add as first column for keyboard tab order and stacking above on narrow screens;
+                                 add Bootstrap nav classes and prepare for ScrollSpy-->
                             <div class="col-lg-3">
                                 <xsl:if test="exists($seg_path)">
-                                    <!-- add Bootstrap nav classes and prepare for ScrollSpy -->
                                     <nav id="toc" aria-labelledby="segnav-title" class="sticky-lg-top">
                                         <strong id="segnav-title">Dokumentabschnitte</strong>
                                         <ul class="nav flex-column">
