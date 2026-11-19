@@ -33,9 +33,12 @@
 }
 
 /*for 2nd layer of sticky sidebar navigation:
-hide nested lists that follow after inactive 1st-layer link*/
-#toc ul a.nav-link:not(.active) + ul {
-    display: none;
+hide nested lists that follow after inactive 1st-layer link;
+but only if JavaScript is enabled (because ScrollSpy needs it)*/
+@media (scripting: enabled) {
+    #toc ul a.nav-link:not(.active) + ul {
+        display: none;
+    }
 }
 
 /*above Bootstrap lg breakpoint (when sidebar is sticky),
