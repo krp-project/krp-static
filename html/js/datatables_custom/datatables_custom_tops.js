@@ -78,8 +78,21 @@ const table = new DataTable('#myTable', {
                 {
                     extend: 'collection',
                     text: 'Export',
-                    buttons: ['copy', 'csv', 'print']
+                    buttons: [
+                        'copy',
+                        'csv',
+                        // Excel export (needs JSZip, loaded in tops.xsl before this script)
+                        {
+                            extend: 'excel',
+                            filename: 'tagesordnungspunkte',
+                            sheetName: 'Tagesordnungspunkte',
+                            title: '',
+                            autoFilter: true
+                        },
+                        'print'
+                    ]
                 }
+
             ]
         },
         bottomStart: 'pageLength',
