@@ -12,7 +12,7 @@
   <xsl:import href="./partials/blockquote.xsl"/>
   <xsl:import href="./partials/zotero.xsl"/>
   <xsl:import href="./partials/datatables_import.xsl"/>
-  <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="yes" omit-xml-declaration="yes"/>
+  <xsl:output encoding="UTF-8" media-type="text/html" method="html" version="5.0" indent="no" omit-xml-declaration="yes"/>
 
   <xsl:template match="/">
     <xsl:variable name="doc_title" select="'Tagesordnungspunkte'"/>
@@ -90,6 +90,7 @@
 
         </main>
         <xsl:call-template name="html_footer"/>
+        <script src="vendor/jszip/jszip.min.js"></script>
         <script src="js/datatables_custom/datatables_custom_tops.js"></script>
 
       </body>
