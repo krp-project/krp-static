@@ -53,3 +53,11 @@ Logo images contained in the `html/images/logos/` folder are subject to separate
 An automated scan with axe DevTools in November 2026 reported no issues on `toc.html` and `listperson.html`.
 
 Entity pop-ups can currently only be opened using the mouse.
+
+## Temporary feature (to be removed)
+
+`tops.html` lists the agenda items of all protocols, grouped by protocol, with multiple download options (including `.csv` and `.xlsx`). This is a temporary feature and remains unlinked in the navbar. These files belong to it and will be removed together with `tops.html`:
+
+* `xslt/tops.xsl` and its target in `build.xml`
+* `html/js/datatables_custom/datatables_custom_tops.js`
+* `html/vendor/jszip/` (JSZip 3.10.1, for Excel export)
